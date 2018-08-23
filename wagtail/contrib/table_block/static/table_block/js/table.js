@@ -65,8 +65,15 @@ function initTable(id, tableOptions) {
     }
 
     persist = function() {
+        var metadata = [];
+        var step;
+        for (step = 1; step <= hot.countRows(); step++) {
+          metadata.push(hot.getCellMetaAtRow(step));
+        };
+        console.log(metadata);
         hiddenStreamInput.val(JSON.stringify({
             data: hot.getData(),
+            metadata: metadata,
             first_row_is_table_header: tableHeaderCheckbox.prop('checked'),
             first_col_is_header: colHeaderCheckbox.prop('checked')
         }));

@@ -112,8 +112,8 @@ class TableBlock(FieldBlock):
     @property
     def media(self):
         return forms.Media(
-            css={'all': ['table_block/css/vendor/handsontable-0.24.2.full.min.css']},
-            js=['table_block/js/vendor/handsontable-0.24.2.full.min.js', 'table_block/js/table.js']
+            css={'all': ['table_block/css/vendor/handsontable-5.0.1.full.min.css']},
+            js=['table_block/js/vendor/handsontable-5.0.1.full.min.js', 'table_block/js/table.js']
         )
 
     def get_table_options(self, table_options=None):
